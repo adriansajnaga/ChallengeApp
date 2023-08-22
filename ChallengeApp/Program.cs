@@ -1,3 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, Adrianox  !");
+﻿Console.WriteLine("Hello, Adriano!");
 Console.ReadKey();
