@@ -1,8 +1,8 @@
 ﻿string name = "Ewa";
-bool sex = false;          // true - mężczyzna, false-kobieta
+bool isMan = false;          
 uint age = 40;
 
-if(sex)       
+if(isMan)       
 {
     if(age>=18)
     {
