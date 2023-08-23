@@ -1,31 +1,22 @@
-﻿string name = "Ewa";
-bool isMan = false;          
-uint age = 40;
+﻿int number = 45666;
+string numberToString = number.ToString();
+char[] letters = numberToString.ToCharArray();
+int existingLetter = 0;
 
-if(isMan)       
+for (int i = 0; i <= 9; i++) 
 {
-    if(age>=18)
+    foreach (char letter in letters)
     {
-        Console.WriteLine($"Pełnoletni mężczyzna o imieniu {name}");
+        int letterToInt = Convert.ToInt32(letter.ToString());
+        if (letterToInt == i)
+        {
+            existingLetter++;
+        }
     }
-    else
-    {
-        Console.WriteLine("Niepełnoletni mężczyzna");       //Komunikat (1)
-    }
+    Console.WriteLine($"{i} => {existingLetter}");
+    existingLetter = 0;
 }
-else         
-{
-    if (age == 33 && name=="Ewa")
-    {
-        Console.WriteLine("Ewa, lat 33");                   //Komunikat (2)
-    }
-    else if (age <30)
-    {
-        Console.WriteLine("Kobieta poniżej 30 lat");        //Kumunikat (3)
-    }
-    else
-    {
-        Console.WriteLine($"Kobieta o imieniu {name} w wieku {age} lat");
-    }
-}
-Console.ReadKey();
+
+
+
+//int letterToInt = letter - '0';   inna metoda zamiany cyfry zapisanej w kodzie ASCII na cyfrę
