@@ -1,6 +1,6 @@
 namespace ChallengeApp.Tests
 {
-    public class Tests
+    public class AddEmployeeAndPoints
     {
         [Test]
         public void WhenAddPoints_ShouldPositiveResult()
