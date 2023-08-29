@@ -29,9 +29,9 @@
         [Test]
         public void WhenCompareTwoReferenceTypes_ShouldNotBeEqual()
         {
-            var employee1 = new Employee("Adrian", "Sajnaga", 36);
-            var employee2 = new Employee("Adrian", "Sajnaga", 36);
-
+            var employee1 = new Employee("Adrian", "Sajnaga");
+            var employee2 = new Employee("Adrian", "Sajnaga");
+            float name;
             Assert.AreNotEqual(employee1, employee2);
         }
     }
