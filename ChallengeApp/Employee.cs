@@ -1,6 +1,6 @@
 ﻿namespace ChallengeApp
 {
-    public class Employee                                           //KLASA
+    public class Employee                                          
     {
 
         private List<float> listOfPoints = new List<float>();
@@ -17,7 +17,45 @@
 
         public void AddPoints(float points)
         {
-            this.listOfPoints.Add(points);
+            if(points>=0 && points<=100)
+            {
+                this.listOfPoints.Add(points);
+            }
+            else
+            {
+                Console.WriteLine($"Invalid value: {points} - out of range");
+            }
+            
+        }
+
+        public void AddPoints(double points) 
+        {
+            float result = (float)points;
+            this.AddPoints(result);
+        }
+
+        public void AddPoints(long points)
+        {
+            float result = Convert.ToSingle(points);
+            this.AddPoints(result);
+        }
+
+        public void AddPoints(int points)
+        {
+            float result = points;
+            this.AddPoints(result);
+        }
+
+        public void AddPoints(string points)
+        {
+            if(float.TryParse(points, out float result))
+            {
+                this.AddPoints(result);
+            }
+            else 
+            {
+                Console.WriteLine($"Invalid value: {points} - not float" );
+            }
         }
 
         public Statistics GetStatistics()
