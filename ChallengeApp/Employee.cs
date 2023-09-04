@@ -44,23 +44,23 @@
             {
                 case 'a':
                 case 'A':
-                    this.listOfPoints.Add(100);
+                    this.AddPoints(100);
                     break;
                 case 'b':
                 case 'B':
-                    this.listOfPoints.Add(80);
+                    this.AddPoints(80);
                     break;
                 case 'c':
                 case 'C':
-                    this.listOfPoints.Add(60);
+                    this.AddPoints(60);
                     break;
                 case 'd':
                 case 'D':
-                    this.listOfPoints.Add(40);
+                    this.AddPoints(40);
                     break;
                 case 'e':
                 case 'E':
-                    this.listOfPoints.Add(20);
+                    this.AddPoints(20);
                     break;
                 default:
                     Console.WriteLine($"Invalid letter: {points}");
