@@ -1,14 +1,21 @@
 ﻿using ChallengeApp;
+Console.ForegroundColor = ConsoleColor.Red;
+Console.BackgroundColor = ConsoleColor.White;
+Console.WriteLine($"Witaj w programie do oceny pracownika");
+Console.WriteLine($"-------------------------------------");
+Console.WriteLine($"");
+Console.WriteLine($"");
+Console.ResetColor();
+Employee employee = new Employee();
 
-Employee employee1 = new Employee("Adrian","Sajnaga");
-List<int> employee1Points = [1, 4, 8, 101, 6];
-
-foreach(int points in employee1Points)
+while (true)
 {
-    employee1.AddPoints(points);
+    Console.WriteLine($"Wpisz kolejną ocenę pracownika:");
+    var input = Console.ReadLine();
+    if (input == "q") { break; }
+    employee.AddPoints(input);
 }
 
-var statistics = employee1.GetStatistics();
-Console.WriteLine($"Maksymalna ocena: {statistics.Max} | Minimalna ocena: {statistics.Min} | Średnia: {statistics.Avg:N2}");
-
+var statistics = employee.GetStatistics();
+Console.WriteLine($"Ilość ocen: {statistics.Count} | Maksymalna ocena: {statistics.Max} | Minimalna ocena: {statistics.Min} | Średnia: {statistics.Avg:N2} | Ocena literowa: {statistics.AvgLetter}");
 Console.ReadLine();

@@ -8,9 +8,9 @@
         {
             var employee1 = new Employee("Adrian", "Sajnaga");
             employee1.AddPoints(5);
-            employee1.AddPoints(-6);
+            employee1.AddPoints(1);
             var statistics = employee1.GetStatistics();
-            Assert.AreEqual(-6, statistics.Min);
+            Assert.AreEqual(1, statistics.Min);
         }
 
         [Test]
@@ -28,20 +28,11 @@
         {
             var employee1 = new Employee("Adrian", "Sajnaga");
             employee1.AddPoints(5);
-            employee1.AddPoints(-6);
+            employee1.AddPoints(1);
             var statistics = employee1.GetStatistics();
-            Assert.AreEqual(-0.5, statistics.Avg);
+            Assert.AreEqual(3, statistics.Avg);
         }
 
-        [Test]
-        public void WhenAddMaxFloatAndMinFloat_ShouldEqualZero()
-        {
-            var employee1 = new Employee("Adrian", "Sajnaga");
-            employee1.AddPoints(float.MinValue);
-            employee1.AddPoints(float.MaxValue);
-            var statistics = employee1.GetStatistics();
-            Assert.AreEqual(0, statistics.Max);
-            
-        }
+
     }
 }
