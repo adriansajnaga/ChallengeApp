@@ -58,7 +58,7 @@
             }
         }
 
-        public Statistics GetStatisticsWithForEach()
+        public Statistics GetStatistics()
         {
             var statistics = new Statistics();
 
@@ -75,67 +75,6 @@
             statistics.Avg /= this.listOfPoints.Count;
             return statistics;
         }
-
-        public Statistics GetStatisticsWithDoWhile()
-        {
-            var statistics = new Statistics();
-
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
-            statistics.Avg = 0;
-            var index = 0;
-
-            do
-            {
-                statistics.Max = Math.Max(statistics.Max, this.listOfPoints[index]);
-                statistics.Min = Math.Min(statistics.Min, this.listOfPoints[index]);
-                statistics.Avg += this.listOfPoints[index];
-                index++;
-            }
-            while (index < this.listOfPoints.Count);
-
-            statistics.Avg /= this.listOfPoints.Count;
-            return statistics;
-        }
-
-        public Statistics GetStatisticsWithWhile()
-        {
-            var statistics = new Statistics();
-
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
-            statistics.Avg = 0;
-            var index = 0;
-
-            while (index < this.listOfPoints.Count)
-            {
-                statistics.Max = Math.Max(statistics.Max, this.listOfPoints[index]);
-                statistics.Min = Math.Min(statistics.Min, this.listOfPoints[index]);
-                statistics.Avg += this.listOfPoints[index];
-                index++;
-            }
-            statistics.Avg /= this.listOfPoints.Count;
-            return statistics;
-        }
-
-        public Statistics GetStatisticsWithFor()
-        {
-            var statistics = new Statistics();
-
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
-            statistics.Avg = 0;
-
-            for (int index = 0; index < this.listOfPoints.Count; index++)
-            {
-                statistics.Max = Math.Max(statistics.Max, this.listOfPoints[index]);
-                statistics.Min = Math.Min(statistics.Min, this.listOfPoints[index]);
-                statistics.Avg += this.listOfPoints[index];
-            }
-            statistics.Avg /= this.listOfPoints.Count;
-            return statistics;
-        }
-
 
     }
 }
