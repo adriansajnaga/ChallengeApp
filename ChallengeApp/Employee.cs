@@ -27,7 +27,7 @@
             }
             else
             {
-                Console.WriteLine($"Invalid value: {points} - out of range");
+                  throw new Exception($"Invalid value: {points} - out of range");
             }
 
         }
@@ -63,8 +63,7 @@
                     this.AddPoints(20);
                     break;
                 default:
-                    Console.WriteLine($"Invalid letter: {points}");
-                    break;
+                    throw new Exception($"Invalid letter: {points}");
             }
         }
 
@@ -92,7 +91,7 @@
             }
             else
             {
-                Console.WriteLine($"Invalid value: {points} - not float");
+                throw new Exception($"Invalid value: {points} - not float");
             }
         }
 

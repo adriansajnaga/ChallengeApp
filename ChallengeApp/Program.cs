@@ -13,7 +13,14 @@ while (true)
     Console.WriteLine($"Wpisz kolejną ocenę pracownika:");
     var input = Console.ReadLine();
     if (input == "q") { break; }
-    employee.AddPoints(input);
+    try
+    {
+        employee.AddPoints(input);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
 }
 
 var statistics = employee.GetStatistics();
