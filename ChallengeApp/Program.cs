@@ -6,7 +6,7 @@ Console.WriteLine($"-------------------------------------");
 Console.WriteLine($"");
 Console.WriteLine($"");
 Console.ResetColor();
-Employee employee = new Employee();
+Employee employee = new Employee("Adrian", "Sajnaga", 36, "M", "Junior .NET Developer");
 
 while (true)
 {
