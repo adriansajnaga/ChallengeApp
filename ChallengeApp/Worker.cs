@@ -1,17 +1,23 @@
 ﻿namespace ChallengeApp
 {
-    public class Employee : Person 
-    {
-
+    public class Worker : iEmployee
+    { 
         private List<float> listOfPoints = new List<float>();
 
-        public Employee(string name, string surname, int age, string sex, string employmentRole)
-            : base(name, surname, age, sex)
+        public Worker()
         {
-            this.EmploymentRole = employmentRole;
+            this.Name = "Adrian";
+            this.Surname = "Sajnaga";
         }
 
-        public string EmploymentRole {  get; private set; }
+        public Worker(string name, string surname)
+        {
+            this.Name = name;
+            this.Surname = surname;
+        }
+
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
 
 
         public void AddPoints(float points)
@@ -22,9 +28,8 @@
             }
             else
             {
-                Console.WriteLine($"Invalid value: {points} - out of range");
+                throw new Exception($"Invalid value: {points} - out of range");
             }
-
         }
 
         public void AddPoints(double points)
@@ -58,8 +63,7 @@
                     this.AddPoints(20);
                     break;
                 default:
-                    Console.WriteLine($"Invalid letter: {points}");
-                    break;
+                    throw new Exception($"Invalid letter: {points}");
             }
         }
 
@@ -87,7 +91,7 @@
             }
             else
             {
-                Console.WriteLine($"Invalid value: {points} - not float");
+                throw new Exception($"Invalid value: {points} - not float");
             }
         }
 
