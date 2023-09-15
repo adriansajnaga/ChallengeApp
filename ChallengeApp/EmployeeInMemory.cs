@@ -1,26 +1,15 @@
 ﻿namespace ChallengeApp
 {
-    public class Worker : iEmployee
-    { 
+    public class EmployeeInMemory : EmployeeBase
+    {
         private List<float> listOfPoints = new List<float>();
 
-        public Worker()
+        public EmployeeInMemory(string name, string surname)
+        :base(name, surname)
         {
-            this.Name = "Adrian";
-            this.Surname = "Sajnaga";
         }
 
-        public Worker(string name, string surname)
-        {
-            this.Name = name;
-            this.Surname = surname;
-        }
-
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-
-
-        public void AddPoints(float points)
+        public override void AddPoints(float points)
         {
             if (points >= 0 && points <= 100)
             {
@@ -32,54 +21,7 @@
             }
         }
 
-        public void AddPoints(double points)
-        {
-            float result = (float)points;
-            this.AddPoints(result);
-        }
-
-        public void AddPoints(char points)
-        {
-            switch (points)
-            {
-                case 'a':
-                case 'A':
-                    this.AddPoints(100);
-                    break;
-                case 'b':
-                case 'B':
-                    this.AddPoints(80);
-                    break;
-                case 'c':
-                case 'C':
-                    this.AddPoints(60);
-                    break;
-                case 'd':
-                case 'D':
-                    this.AddPoints(40);
-                    break;
-                case 'e':
-                case 'E':
-                    this.AddPoints(20);
-                    break;
-                default:
-                    throw new Exception($"Invalid letter: {points}");
-            }
-        }
-
-        public void AddPoints(long points)
-        {
-            float result = Convert.ToSingle(points);
-            this.AddPoints(result);
-        }
-
-        public void AddPoints(int points)
-        {
-            float result = points;
-            this.AddPoints(result);
-        }
-
-        public void AddPoints(string points)
+        public override void AddPoints(string points)
         {
             if (float.TryParse(points, out float result))
             {
@@ -95,7 +37,7 @@
             }
         }
 
-        public Statistics GetStatistics()
+        public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
 
@@ -131,6 +73,6 @@
             }
             return statistics;
         }
-
     }
 }
+
