@@ -17,13 +17,13 @@
 
         public abstract void AddPoints(float points);
 
-        public virtual void AddPoints(double points)
+        public void AddPoints(double points)
         {
             float result = (float)points;
             this.AddPoints(result);
         }
 
-        public virtual void AddPoints(char points)
+        public void AddPoints(char points)
         {
             switch (points)
             {
@@ -52,13 +52,13 @@
             }
         }
 
-        public virtual void AddPoints(long points)
+        public void AddPoints(long points)
         {
             float result = Convert.ToSingle(points);
             this.AddPoints(result);
         }
 
-        public virtual void AddPoints(int points)
+        public void AddPoints(int points)
         {
             float result = points;
             AddPoints(result);
@@ -68,7 +68,7 @@
 
         public abstract Statistics GetStatistics();
 
-        public virtual void EmployeePointAdded(object sender, EventArgs args)
+        public void EmployeePointAdded(object sender, EventArgs args)
         {
             Console.WriteLine("Dodano nową ocenę");
         }
