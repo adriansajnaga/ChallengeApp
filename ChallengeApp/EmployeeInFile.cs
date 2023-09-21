@@ -4,7 +4,10 @@
     {
         private const string fileName = "points.txt";
 
+        public override event PointAddedDelegate PointAdded;
+
         public EmployeeInFile(string name, string surname)
+
         : base(name, surname)
         {
         }
@@ -17,11 +20,21 @@
                 {
                     writer.WriteLine(points);
                 }
+
+                if (PointAdded != null)
+                {
+                    PointAdded(this, new EventArgs());
+                }
             }
             else
             {
                 throw new Exception($"Invalid value: {points} - out of range");
             }
+        }
+
+        private void WriteMessageInConsole(string message)
+        {
+            Console.WriteLine(message.ToUpper());
         }
 
         public override void AddPoints(string points)

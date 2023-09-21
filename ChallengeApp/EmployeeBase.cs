@@ -2,6 +2,10 @@
 {
 	public abstract class EmployeeBase : iEmployee
 	{
+        public delegate void PointAddedDelegate(object sender, EventArgs args);
+
+        public abstract event PointAddedDelegate PointAdded;
+
         public EmployeeBase(string name, string surname)
         {
             this.Name = name;
@@ -63,5 +67,10 @@
         public abstract void AddPoints(string points);
 
         public abstract Statistics GetStatistics();
+
+        public virtual void EmployeePointAdded(object sender, EventArgs args)
+        {
+            Console.WriteLine("Dodano nową ocenę");
+        }
     }
 }

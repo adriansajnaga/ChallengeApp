@@ -4,6 +4,8 @@
     {
         private List<float> listOfPoints = new List<float>();
 
+        public override event PointAddedDelegate PointAdded;
+
         public EmployeeInMemory(string name, string surname)
         :base(name, surname)
         {
@@ -14,6 +16,11 @@
             if (points >= 0 && points <= 100)
             {
                 this.listOfPoints.Add(points);
+
+                if (PointAdded != null)
+                {
+                    PointAdded(this, new EventArgs());
+                }
             }
             else
             {

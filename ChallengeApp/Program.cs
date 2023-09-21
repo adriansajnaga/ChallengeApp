@@ -10,6 +10,8 @@ Console.WriteLine($"");
 Console.ResetColor();
 
 var employee = new EmployeeInFile("Adrian", "Sajnaga");
+employee.PointAdded += employee.EmployeePointAdded;
+
 
 while (true)
 {
