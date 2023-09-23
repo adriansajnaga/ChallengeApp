@@ -7,7 +7,7 @@
         {
             int number1 = 199;
             int number2 = 199;
-            
+
             Assert.AreEqual(number1, number2);
         }
         [Test]
@@ -23,7 +23,7 @@
         {
             string string1 = "Adrian";
             string string2 = "Adrian";
-            
+
             Assert.AreEqual(string1, string2);
         }
         [Test]

@@ -1,7 +1,7 @@
-namespace ChallengeApp.Tests
+﻿namespace ChallengeApp.Tests
 {
     public class AddEmployee
-    { 
+    {
 
         [Test]
         public void WhenAddEmployeeAdam_ShouldReturnNameAdam()

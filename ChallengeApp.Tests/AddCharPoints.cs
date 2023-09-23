@@ -1,4 +1,4 @@
-﻿namespace ChallengeApp.Tests
+namespace ChallengeApp.Tests
 {
     internal class AddCharPoints
     {
