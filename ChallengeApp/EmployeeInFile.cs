@@ -57,12 +57,7 @@
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
-
-            statistics.Max = float.MinValue;
-            statistics.Min = float.MaxValue;
-            statistics.Avg = 0;
-            int count = 0;
-
+       
             if (File.Exists(fileName))
             {
                 using (var reader = File.OpenText(fileName))
@@ -71,10 +66,7 @@
                     while ((line = reader.ReadLine()) != null)
                     {
                         float.TryParse(line, out float point);
-                        statistics.Max = Math.Max(statistics.Max, point);
-                        statistics.Min = Math.Min(statistics.Min, point);
-                        statistics.Avg += point;
-                        count++;
+                        statistics.AddPointsToStatistics(point);
                     }
                 }
             }
@@ -83,29 +75,9 @@
                 throw new Exception($"The File: {fileName} - not exist");
             }
 
-            statistics.Avg /= count;
-            statistics.Count = count;
-            switch (statistics.Avg)
-            {
-                case var a when a > 80:
-                    statistics.AvgLetter = 'A';
-                    break;
-                case var a when a > 60:
-                    statistics.AvgLetter = 'B';
-                    break;
-                case var a when a > 40:
-                    statistics.AvgLetter = 'C';
-                    break;
-                case var a when a > 20:
-                    statistics.AvgLetter = 'D';
-                    break;
-                default:
-                    statistics.AvgLetter = 'E';
-                    break;
-            }
             return statistics;
 
-        }
+            }
     }
 }
 
